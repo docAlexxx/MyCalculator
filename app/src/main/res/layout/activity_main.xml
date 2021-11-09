@@ -7,5 +7,63 @@
     tools:context=".MainActivity">
 
 
-   
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/reset_button"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/buttun_merge"
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/button_reset"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/delete_button"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/buttun_merge"
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/button_delete"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/change_number_sign_button"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/buttun_merge"
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/button_change_sign"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/plus_button"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/buttun_merge"
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/button_point"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </TableRow>
+
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
