@@ -14,7 +14,6 @@ public class Calculator {
     private final int MAX_LENGTH = 13;
     private int numberLength;
 
-
     public Calculator() {
         result = 0;
         number = 0;
@@ -46,7 +45,6 @@ public class Calculator {
                 changeNumber(digit);
                 break;
         }
-
         lastAction = "number";
         numberToScreen = currentNumber;
     }
@@ -143,23 +141,28 @@ public class Calculator {
             numberToScreen = "0";
             processToScreen = "";
         }
-
     }
 
     public void processButtonPush(String nextOperator) {
-        switch (lastAction) {
-            case ("number"):
-                counting();
-                currentNumber = String.valueOf(result);
-                numberToScreen = currentNumber;
-                break;
-            case ("result"):
-                currentNumber = String.valueOf(result);
-                break;
+        if (nextOperator.equals("result")) {
+            lastAction = "result";
+            counting();
+            numberToScreen = String.valueOf(result);
+        } else {
+            switch (lastAction) {
+                case ("number"):
+                    counting();
+                    currentNumber = String.valueOf(result);
+                    numberToScreen = currentNumber;
+                    break;
+                case ("result"):
+                    currentNumber = String.valueOf(result);
+                    break;
+            }
+            lastAction = "process";
+            operation = nextOperator;
+            processToScreen = operation;
         }
-        lastAction = "process";
-        operation = nextOperator;
-        processToScreen = operation;
     }
 
     public void counting() {
@@ -191,7 +194,6 @@ public class Calculator {
 
         }
         checkResult();
-
     }
 
     public double currentNumberToDouble(String number) {
@@ -226,6 +228,5 @@ public class Calculator {
             result = Math.round(result * Math.pow(10, MAX_LENGTH - intLength)) / Math.pow(10, MAX_LENGTH - intLength);
         }
     }
-
 
 }
