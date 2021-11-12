@@ -40,6 +40,9 @@ public class Calculator {
                 break;
             case ("result"):
                 currentNumber = "";
+                result = 0;
+                operation = "plus";
+                processToScreen = "";
                 changeNumber(digit);
                 break;
         }
@@ -49,17 +52,17 @@ public class Calculator {
     }
 
     private void changeNumber(String digit) {
-        if (digit == ".") {
+        if (digit.equals(".")) {
             addPoint();
             return;
         }
 
-        if (digit == "+/-") {
+        if (digit.equals("+/-")) {
             changeNumberSign();
             return;
         }
 
-        if (digit == "del") {
+        if (digit.equals("del")) {
             deleteDigit();
             return;
         }
@@ -74,10 +77,10 @@ public class Calculator {
 
     private void addPoint() {
         if (!isDecimal) {
-            if (currentNumber == "") {
+            if (currentNumber.equals("")) {
                 currentNumber = "0.";
                 numberLength++;
-            } else if (currentNumber == "-") {
+            } else if (currentNumber.equals("-")) {
                 currentNumber = "-0.";
                 numberLength++;
             } else {
@@ -88,11 +91,11 @@ public class Calculator {
     }
 
     public void changeNumberSign() {
-        if (currentNumber == "") {
+        if (currentNumber.equals("")) {
             currentNumber = "-";
             isNegative = true;
         } else {
-            if (Double.valueOf(currentNumber) < 0) {
+            if (Double.parseDouble(currentNumber) < 0) {
                 currentNumber = currentNumber.substring(1);
                 isNegative = false;
             } else {
@@ -117,7 +120,7 @@ public class Calculator {
     }
 
     public void deleteDigit() {
-        if (currentNumber != "") {
+        if (!currentNumber.equals("")) {
             Character lastSymbol = currentNumber.charAt(currentNumber.length() - 1);
             if (lastSymbol.equals('.')) {
                 isDecimal = false;
@@ -133,6 +136,94 @@ public class Calculator {
             if (!lastSymbol.equals('.') && !lastSymbol.equals('-')) {
                 numberLength--;
             }
+        }
+        if (currentNumber.equals("")) {
+            operation = "plus";
+            lastAction = "process";
+            numberToScreen = "0";
+            processToScreen = "";
+        }
+
+    }
+
+    public void processButtonPush(String nextOperator) {
+        switch (lastAction) {
+            case ("number"):
+                counting();
+                currentNumber = String.valueOf(result);
+                numberToScreen = currentNumber;
+                break;
+            case ("result"):
+                currentNumber = String.valueOf(result);
+                break;
+        }
+        lastAction = "process";
+        operation = nextOperator;
+        processToScreen = operation;
+    }
+
+    public void counting() {
+        double operationNumber;
+
+        if (!currentNumber.equals("")) {
+            operationNumber = currentNumberToDouble(currentNumber);
+        } else {
+            operationNumber = 0.0;
+        }
+        switch (operation) {
+            case ("plus"):
+                result = result + operationNumber;
+                break;
+            case ("minus"):
+                result = result - operationNumber;
+                break;
+            case ("multiply"):
+                result = result * operationNumber;
+                break;
+            case ("divide"): {
+                if (operationNumber == 0) {
+                    isError = true;
+                } else {
+                    result = result / operationNumber;
+                }
+            }
+            break;
+
+        }
+        checkResult();
+
+    }
+
+    public double currentNumberToDouble(String number) {
+        int intgerPart = 0;
+        int decimalPart = 0;
+        int afterpoint = 0;
+
+        if (isDecimal) {
+            int dotIndex = number.indexOf(".");
+            intgerPart = Integer.parseInt(number.substring(0, dotIndex));
+            decimalPart = Integer.parseInt(number.substring(dotIndex + 1));
+            afterpoint = number.length() - 1 - dotIndex;
+        } else {
+            intgerPart = Integer.parseInt(number);
+        }
+        return intgerPart + decimalPart / Math.pow(10, afterpoint);
+    }
+
+    private void checkResult() {
+        int intLength = 0;
+        result = Math.round(result * Math.pow(10, MAX_LENGTH - 1)) / Math.pow(10, MAX_LENGTH - 1);
+        int checkRes = (int) result;
+
+        do {
+            checkRes = checkRes / 10;
+            intLength++;
+        } while (checkRes != 0);
+
+        if (intLength > MAX_LENGTH) {
+            isError = true;
+        } else {
+            result = Math.round(result * Math.pow(10, MAX_LENGTH - intLength)) / Math.pow(10, MAX_LENGTH - intLength);
         }
     }
 
