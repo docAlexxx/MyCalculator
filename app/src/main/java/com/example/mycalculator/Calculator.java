@@ -29,7 +29,7 @@ public class Calculator {
         numberLength = 0;
     }
 
-    public void changeNumberButtonPress(String digit) {
+    public void changeNumberButtonPush(String digit) {
         switch (lastAction) {
             case ("number"):
                 changeNumber(digit);
@@ -56,6 +56,11 @@ public class Calculator {
 
         if (digit == "+/-") {
             changeNumberSign();
+            return;
+        }
+
+        if (digit == "del") {
+            deleteDigit();
             return;
         }
 
@@ -96,5 +101,40 @@ public class Calculator {
             }
         }
     }
+
+    public void resetButtonPush() {
+        result = 0;
+        number = 0;
+        currentNumber = "";
+        operation = "plus";
+        lastAction = "process";
+        numberToScreen = "0";
+        processToScreen = "";
+        isDecimal = false;
+        isNegative = false;
+        isError = false;
+        numberLength = 0;
+    }
+
+    public void deleteDigit() {
+        if (currentNumber != "") {
+            Character lastSymbol = currentNumber.charAt(currentNumber.length() - 1);
+            if (lastSymbol.equals('.')) {
+                isDecimal = false;
+            }
+            if (lastSymbol.equals('-')) {
+                isNegative = false;
+            }
+            if (currentNumber.length() == 1) {
+                currentNumber = "";
+            } else {
+                currentNumber = currentNumber.substring(0, currentNumber.length() - 1);
+            }
+            if (!lastSymbol.equals('.') && !lastSymbol.equals('-')) {
+                numberLength--;
+            }
+        }
+    }
+
 
 }

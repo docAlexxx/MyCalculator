@@ -23,7 +23,7 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:text="-0.123456789"
-        android:textSize="40sp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/process_screen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
