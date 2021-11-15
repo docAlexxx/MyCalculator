@@ -1,6 +1,8 @@
 package com.example.mycalculator;
 
-public class Calculator {
+import java.io.Serializable;
+
+public class Calculator implements Serializable {
     public double result;
     public double number;
     public String currentNumber;

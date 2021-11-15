@@ -1,5 +1,6 @@
 package com.example.mycalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -33,6 +34,25 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton resetButton;
     Calculator calculator = new Calculator();
 
+    private final static String CurrentCounting = "Counters";
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle instanceState) {
+        super.onSaveInstanceState(instanceState);
+        instanceState.putSerializable(CurrentCounting, calculator);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
+        super.onRestoreInstanceState(instanceState);
+        calculator = (Calculator) instanceState.getSerializable(CurrentCounting);
+        textToScreens();
+    }
+
+    private void textToScreens(){
+        NumberToScreen();
+        processTextView.setText(calculator.processToScreen);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
