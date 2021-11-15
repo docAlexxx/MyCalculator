@@ -29,28 +29,30 @@ public class Calculator {
     }
 
     public void changeNumberButtonPush(String digit) {
-        switch (lastAction) {
-            case ("number"):
-                changeNumber(digit);
-                break;
-            case ("process"):
-                currentNumber = "";
-                changeNumber(digit);
-                break;
-            case ("result"):
-                currentNumber = "";
-                result = 0;
-                operation = "plus";
-                processToScreen = "";
-                changeNumber(digit);
-                break;
+        if (!isError) {
+            switch (lastAction) {
+                case ("number"):
+                    changeNumber(digit);
+                    break;
+                case ("process"):
+                    currentNumber = "";
+                    changeNumber(digit);
+                    break;
+                case ("result"):
+                    currentNumber = "";
+                    result = 0;
+                    operation = "plus";
+                    processToScreen = "";
+                    changeNumber(digit);
+                    break;
+            }
+            lastAction = "number";
+            numberToScreen = currentNumber;
         }
-        lastAction = "number";
-        numberToScreen = currentNumber;
     }
 
     private void changeNumber(String digit) {
-        if (digit.equals(".")) {
+        if (digit.equals("point")) {
             addPoint();
             return;
         }
@@ -144,11 +146,7 @@ public class Calculator {
     }
 
     public void processButtonPush(String nextOperator) {
-        if (nextOperator.equals("result")) {
-            lastAction = "result";
-            counting();
-            numberToScreen = String.valueOf(result);
-        } else {
+        if (!isError) {
             switch (lastAction) {
                 case ("number"):
                     counting();
@@ -229,4 +227,11 @@ public class Calculator {
         }
     }
 
+    public void resultButtonPush() {
+        if (!isError) {
+            lastAction = "result";
+            counting();
+            numberToScreen = String.valueOf(result);
+        }
+    }
 }
