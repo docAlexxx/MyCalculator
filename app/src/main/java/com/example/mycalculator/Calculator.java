@@ -36,10 +36,16 @@ public class Calculator {
                     break;
                 case ("process"):
                     currentNumber = "";
+                    isDecimal = false;
+                    isNegative = false;
+                    numberLength = 0;
                     changeNumber(digit);
                     break;
                 case ("result"):
                     currentNumber = "";
+                    isDecimal = false;
+                    isNegative = false;
+                    numberLength = 0;
                     result = 0;
                     operation = "plus";
                     processToScreen = "";
@@ -152,6 +158,7 @@ public class Calculator {
                     counting();
                     currentNumber = String.valueOf(result);
                     numberToScreen = currentNumber;
+                    updateNumberToScreen();
                     break;
                 case ("result"):
                     currentNumber = String.valueOf(result);
@@ -198,9 +205,9 @@ public class Calculator {
         int intgerPart = 0;
         int decimalPart = 0;
         int afterpoint = 0;
+        int dotIndex = number.indexOf(".");
 
-        if (isDecimal) {
-            int dotIndex = number.indexOf(".");
+        if (dotIndex>0) {
             intgerPart = Integer.parseInt(number.substring(0, dotIndex));
             decimalPart = Integer.parseInt(number.substring(dotIndex + 1));
             afterpoint = number.length() - 1 - dotIndex;
@@ -232,6 +239,21 @@ public class Calculator {
             lastAction = "result";
             counting();
             numberToScreen = String.valueOf(result);
+            updateNumberToScreen();
+
         }
     }
+
+    public void updateNumberToScreen() {
+        int dotIndex = numberToScreen.indexOf(".");
+        int decimalPart = Integer.parseInt(numberToScreen.substring(dotIndex + 1));
+
+        if (decimalPart == 0) {
+            numberToScreen = numberToScreen.substring(0, dotIndex);
+        }
+
+
+    }
+
+
 }

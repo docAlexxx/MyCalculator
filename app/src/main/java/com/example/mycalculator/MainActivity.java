@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         resetButton.setOnClickListener(v -> {
             calculator.resetButtonPush();
             NumberToScreen();
-            processTextView.setText(calculator.operation);
+            processTextView.setText(calculator.processToScreen);
         });
         deleteButton.setOnClickListener(v -> {
             calculator.changeNumberButtonPush("del");
@@ -80,22 +80,22 @@ public class MainActivity extends AppCompatActivity {
         plusButton.setOnClickListener(v -> {
             calculator.processButtonPush("plus");
             NumberToScreen();
-            processTextView.setText(calculator.operation);
+            processTextView.setText(calculator.processToScreen);
         });
         minusButton.setOnClickListener(v -> {
             calculator.processButtonPush("minus");
             NumberToScreen();
-            processTextView.setText(calculator.operation);
+            processTextView.setText(calculator.processToScreen);
         });
         multiplyButton.setOnClickListener(v -> {
             calculator.processButtonPush("multiply");
             NumberToScreen();
-            processTextView.setText(calculator.operation);
+            processTextView.setText(calculator.processToScreen);
         });
         devideButton.setOnClickListener(v -> {
             calculator.processButtonPush("divide");
             NumberToScreen();
-            processTextView.setText(calculator.operation);
+            processTextView.setText(calculator.processToScreen);
         });
         pointButton.setOnClickListener(v -> {
             calculator.changeNumberButtonPush("point");
