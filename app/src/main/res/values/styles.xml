@@ -30,6 +30,34 @@
         <item name="android:textSize">@dimen/button_text_size</item>
     </style>
 
+    <style name="ScreenStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:fontFamily">@font/digital</item>
+        <item name="android:background">@color/screen_color</item>
+        <item name="android:textColor">@color/screen_text_color</item>
+
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="35sp"
+    </style>
+
+    <style name="ScreenStyle.Numbers">
+        <item name="android:layout_height">@dimen/number_screen_height</item>
+        <item name="android:layout_width">@dimen/number_screen_width</item>
+        <item name="android:layout_marginTop">@dimen/number_screen_marginTop</item>
+        <item name="android:layout_marginBottom">@dimen/number_screen_marginBottom</item>
+        <item name="android:textSize">@dimen/number_screen_text_size</item>
+    </style>
+
+    <style name="ScreenStyle.Action">
+        <item name="android:layout_height">@dimen/action_screen_height</item>
+        <item name="android:layout_width">@dimen/action_screen_width</item>
+        <item name="android:textSize">@dimen/action_screen_text_size</item>
+    </style>
+
 
 
 

@@ -15,5 +15,6 @@
     <color name="number_button_text_color">#111111</color>
     <color name="action_button_text_color">#111111</color>
     <color name="reset_button_text_color">#111111</color>
+    <color name="screen_text_color">#111111</color>
 
 </resources>

@@ -13,7 +13,7 @@ public class Calculator implements Serializable {
     public boolean isDecimal;
     public boolean isNegative;
     public boolean isError;
-    private final int MAX_LENGTH = 13;
+    private final int MAX_LENGTH = 10;
     private int numberLength;
 
     public Calculator() {

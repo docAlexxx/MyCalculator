@@ -10,4 +10,16 @@
     <dimen name="button_stroke_width">2dp</dimen>
     <dimen name="del_button_text_size">13sp</dimen>
 
+    <dimen name="number_screen_width">280dp</dimen>
+    <dimen name="number_screen_height">50dp</dimen>
+    <dimen name="number_screen_marginTop">50dp</dimen>
+    <dimen name="number_screen_marginBottom">10dp</dimen>
+    <dimen name="number_screen_text_size">50sp</dimen>
+
+    <dimen name="action_screen_width">180dp</dimen>
+    <dimen name="action_screen_height">40dp</dimen>
+    <dimen name="action_screen_text_size">40sp</dimen>
+
+
+
 </resources>
