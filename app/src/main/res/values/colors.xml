@@ -16,5 +16,25 @@
     <color name="action_button_text_color">#111111</color>
     <color name="reset_button_text_color">#111111</color>
     <color name="screen_text_color">#111111</color>
+    <color name="ripple_color">#09EBE2</color>
+
+    <color name="color_primary">#A9DFD7</color>
+    <color name="color_primary_dark">#359184</color>
+    <color name="color_accent">#FBECAF</color>
+    <color name="color_secondary">#1F44FF</color>
+    <color name="color_secondary_variant">#455BCA</color>
+    <color name="color_on_secondary">#151871</color>
+
+    <color name="dark_color_primary">#1D8E7D</color>
+    <color name="dark_color_primary_dark">#065914</color>
+    <color name="dark_color_accent">#A89A60</color>
+    <color name="dark_color_secondary">#1732BC</color>
+    <color name="dark_color_secondary_variant">#7DA804</color>
+    <color name="dark_color_on_secondary">#2196F3</color>
+
+    <color name="mono_screen_color">#3C3C3C</color>
+    <color name="mono_button_color">#616161</color>
+    <color name="mono_text_color">#FFFFFF</color>
+
 
 </resources>

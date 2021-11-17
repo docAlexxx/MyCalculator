@@ -7,7 +7,7 @@
     <dimen name="button_width">60dp</dimen>
     <dimen name="button_heigth">60dp</dimen>
     <dimen name="button_corner_radius">8dp</dimen>
-    <dimen name="button_stroke_width">2dp</dimen>
+    <dimen name="button_stroke_width">1dp</dimen>
     <dimen name="del_button_text_size">13sp</dimen>
 
     <dimen name="number_screen_width">280dp</dimen>

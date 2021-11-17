@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/background6" />
+        app:srcCompat="@drawable/background6"/>
 
     <TextView
         android:id="@+id/number_screen"
