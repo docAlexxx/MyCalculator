@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonStyle">
+        <item name="android:layout_height">@dimen/button_heigth</item>
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_margin">@dimen/buttun_margin</item>
+        <item name="rippleColor">#09EBE2</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="strokeColor">@color/black</item>
+        <item name="strokeWidth">@dimen/button_stroke_width</item>
+    </style>
+
+    <style name="ButtonStyle.Numbers">
+        <item name="android:backgroundTint">@color/number_button_color</item>
+        <item name="android:textColor">@color/number_button_text_color</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:fontFamily">@font/numbers2</item>
+    </style>
+
+    <style name="ButtonStyle.Actions">
+        <item name="android:backgroundTint">@color/action_button_color</item>
+        <item name="android:textColor">@color/action_button_text_color</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
+
+    <style name="ButtonStyle.Reset">
+        <item name="android:backgroundTint">@color/reset_button_color</item>
+        <item name="android:textColor">@color/reset_button_text_color</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
+
+    <style name="ScreenStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:fontFamily">@font/digital</item>
+        <item name="android:background">@color/screen_color</item>
+        <item name="android:textColor">@color/screen_text_color</item>
+   </style>
+
+    <style name="ScreenStyle.Numbers">
+        <item name="android:layout_height">@dimen/number_screen_height</item>
+        <item name="android:layout_width">@dimen/number_screen_width</item>
+        <item name="android:layout_marginTop">@dimen/number_screen_marginTop</item>
+        <item name="android:layout_marginBottom">@dimen/number_screen_marginBottom</item>
+        <item name="android:textSize">@dimen/number_screen_text_size</item>
+    </style>
+
+    <style name="ScreenStyle.Action">
+        <item name="android:layout_height">@dimen/action_screen_height</item>
+        <item name="android:layout_width">@dimen/action_screen_width</item>
+        <item name="android:textSize">@dimen/action_screen_text_size</item>
+    </style>
+
+
+    <style name="LightTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondaryVariant">@color/color_secondary_variant</item>
+        <item name="colorOnSecondary">@color/color_on_secondary</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/dark_color_primary</item>
+        <item name="colorPrimaryDark">@color/dark_color_primary_dark</item>
+        <item name="colorAccent">@color/dark_color_accent</item>
+        <item name="colorSecondary">@color/dark_color_secondary</item>
+        <item name="colorSecondaryVariant">@color/dark_color_secondary_variant</item>
+        <item name="colorOnSecondary">@color/dark_color_on_secondary</item>
+    </style>
+
+    <style name="MonoTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:backgroundTint">@color/mono_button_color</item>
+        <item name="android:textColor">@color/mono_text_color</item>
+        <item name="android:background">@color/mono_screen_color</item>
+
+    </style>
+
+
+
+
+</resources>
