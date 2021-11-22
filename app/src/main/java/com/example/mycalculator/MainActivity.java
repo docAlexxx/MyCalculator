@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton resultButton;
     private MaterialButton deleteButton;
     private MaterialButton resetButton;
+    private ImageView settingButton;
     Calculator calculator = new Calculator();
 
     private final static String CurrentCounting = "Counters";
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         resultButton = findViewById(R.id.result_button);
         deleteButton = findViewById(R.id.delete_button);
         resetButton = findViewById(R.id.reset_button);
+        settingButton = findViewById(R.id.setting_button);
     }
 
     private void setupButtons() {
@@ -169,6 +172,11 @@ public class MainActivity extends AppCompatActivity {
         number9Button.setOnClickListener(v -> {
             calculator.changeNumberButtonPush("9");
             NumberToScreen();
+        });
+
+        settingButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
         });
     }
 
