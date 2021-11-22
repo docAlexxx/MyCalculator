@@ -10,9 +10,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     private static final String NameSharedPreference = "LOGIN";
     private static final String AppTheme = "APP_THEME";
 
-    protected static final int LightThemeCode = 0;
-    protected static final int DarkThemeCode = 1;
-    protected static final int MonoThemeCode = 2;
+    protected static final int MainThemeCode = 0;
+    protected static final int LightThemeCode = 1;
+    protected static final int DarkThemeCode = 2;
+    protected static final int MonoThemeCode = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +39,14 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private int codeStyleToStyleId(int codeStyle) {
         switch (codeStyle) {
-            case MonoThemeCode:
-                return R.style.MonoTheme;
+            case LightThemeCode:
+                return R.style.LightTheme;
             case DarkThemeCode:
                 return R.style.DarkTheme;
+            case MonoThemeCode:
+                return R.style.MonoTheme;
             default:
-                return R.style.LightTheme;
+                return R.style.MainTheme;
         }
     }
 }
