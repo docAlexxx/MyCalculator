@@ -2,6 +2,7 @@ package com.example.mycalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
@@ -9,7 +10,9 @@ import android.widget.RadioGroup;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 
-public class SettingsActivity extends BaseActivity {
+public class SettingsActivity extends BaseActivity implements Constants{
+
+    public int currentCodeStyle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,10 +20,18 @@ public class SettingsActivity extends BaseActivity {
         setContentView(R.layout.activity_settings);
 
         MaterialButton backButton = findViewById(R.id.back_button);
-        backButton.setOnClickListener(v -> finish());
+
+        backButton.setOnClickListener(v -> {
+            Intent themeSettings = new Intent();
+            themeSettings.putExtra(CURRENT_THEME, currentCodeStyle);
+            setResult(RESULT_OK,themeSettings);
+            finish();
+        });
 
         initThemeChooser();
     }
+
+
 
     private void initThemeChooser() {
         initRadioButton(findViewById(R.id.radioButtonLightTheme), LightThemeCode);
@@ -37,6 +48,7 @@ public class SettingsActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 setAppTheme(codeStyle);
+                currentCodeStyle=codeStyle;
                 recreate();
             }
         });

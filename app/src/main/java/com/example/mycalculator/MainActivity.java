@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.radiobutton.MaterialRadioButton;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements Constants {
     private TextView numbersTextView;
     private TextView processTextView;
     private MaterialButton number0Button;
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     Calculator calculator = new Calculator();
 
     private final static String CurrentCounting = "Counters";
+    private static final int REQUEST_CODE_SETTING_ACTIVITY = 99;
+
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle instanceState) {
@@ -63,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         initElements();
         setupButtons();
+
     }
 
     private void initElements() {
@@ -176,9 +182,23 @@ public class MainActivity extends AppCompatActivity {
 
         settingButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
+            startActivityForResult(intent,REQUEST_CODE_SETTING_ACTIVITY);
         });
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode != REQUEST_CODE_SETTING_ACTIVITY) {
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+
+        if (resultCode == RESULT_OK){
+            int codeStyle= data.getExtras().getInt(CURRENT_THEME);
+            recreate();
+
+        }
+    }
+
 
     public void NumberToScreen() {
         if (calculator.isError) {
