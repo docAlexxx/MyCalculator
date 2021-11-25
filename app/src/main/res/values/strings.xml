@@ -19,4 +19,10 @@
     <string name="button_7">7</string>
     <string name="button_8">8</string>
     <string name="button_9">9</string>
+    <string name="light_theme">LightTheme</string>
+    <string name="dark_theme">DarkTheme</string>
+    <string name="mono_theme">MonoTheme</string>
+    <string name="back_button">Back</string>
+    <string name="choose_theme">Choose Theme</string>
+    <string name="main_theme">Main Theme</string>
 </resources>

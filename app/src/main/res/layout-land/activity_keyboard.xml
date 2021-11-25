@@ -2,112 +2,101 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_columnSpan="4"
-    android:background="@color/keyboard_background">
+    android:layout_columnSpan="5">
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/reset_button"
             style="@style/ButtonStyle.Reset"
-            android:text="@string/button_reset"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/delete_button"
-            style="@style/ButtonStyle.Actions"
-            android:textSize="@dimen/del_button_text_size"
-            android:text="@string/button_delete"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/change_number_sign_button"
-            style="@style/ButtonStyle.Actions"
-            android:text="@string/button_change_sign"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/plus_button"
-            style="@style/ButtonStyle.Actions"
-            android:text="@string/button_plus"/>
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+            android:text="@string/button_reset" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/seven_button"
             style="@style/ButtonStyle.Numbers"
-            android:text="@string/button_7"/>
+            android:text="@string/button_7" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/eight_button"
             style="@style/ButtonStyle.Numbers"
-            android:text="@string/button_8"/>
+            android:text="@string/button_8" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/nine_button"
             style="@style/ButtonStyle.Numbers"
-            android:text="@string/button_9"/>
+            android:text="@string/button_9" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/minus_button"
+            android:id="@+id/plus_button"
             style="@style/ButtonStyle.Actions"
-            android:text="@string/button_minus"/>
+            android:text="@string/button_plus" />
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/delete_button"
+            style="@style/ButtonStyle.Actions"
+            android:text="@string/button_delete"
+            android:textSize="@dimen/del_button_text_size" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/four_button"
             style="@style/ButtonStyle.Numbers"
-            android:text="@string/button_4"/>
+            android:text="@string/button_4" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/five_button"
             style="@style/ButtonStyle.Numbers"
-            android:text="@string/button_5"/>
+            android:text="@string/button_5" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/six_button"
             style="@style/ButtonStyle.Numbers"
-            android:text="@string/button_6"/>
+            android:text="@string/button_6" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/multiply_button"
+            android:id="@+id/minus_button"
             style="@style/ButtonStyle.Actions"
-            android:text="@string/button_multiply"/>
+            android:text="@string/button_minus" />
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/change_number_sign_button"
+            style="@style/ButtonStyle.Actions"
+            android:text="@string/button_change_sign" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/one_button"
             style="@style/ButtonStyle.Numbers"
-            android:text="@string/button_1"/>
+            android:text="@string/button_1" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/two_button"
             style="@style/ButtonStyle.Numbers"
-            android:text="@string/button_2"/>
+            android:text="@string/button_2" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/three_button"
             style="@style/ButtonStyle.Numbers"
-            android:text="@string/button_3"/>
+            android:text="@string/button_3" />
+
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/divide_button"
+            android:id="@+id/multiply_button"
             style="@style/ButtonStyle.Actions"
-            android:text="@string/button_divide"/>
+            android:text="@string/button_multiply" />
     </TableRow>
 
     <TableRow
@@ -116,22 +105,26 @@
         android:gravity="center">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/zero_button"
-            style="@style/ButtonStyle.Numbers"
-            android:text="@string/button_0"/>
-
-        <com.google.android.material.button.MaterialButton
             android:id="@+id/point_button"
             style="@style/ButtonStyle.Actions"
-            android:text="@string/button_point"/>
+            android:text="@string/button_point" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/zero_button"
+            style="@style/ButtonStyle.Numbers"
+            android:text="@string/button_0" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/result_button"
             style="@style/ButtonStyle.Actions"
             android:layout_span="2"
-            android:text="@string/button_result"/>
+            android:text="@string/button_result" />
 
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/divide_button"
+            style="@style/ButtonStyle.Actions"
+            android:text="@string/button_divide" />
     </TableRow>
 
 </TableLayout>

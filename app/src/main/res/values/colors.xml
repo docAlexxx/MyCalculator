@@ -35,6 +35,7 @@
     <color name="mono_screen_color">#3C3C3C</color>
     <color name="mono_button_color">#616161</color>
     <color name="mono_text_color">#FFFFFF</color>
+    <color name="keyboard_background">#0000</color>
 
 
 </resources>
